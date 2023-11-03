@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+
+</title>
+<style>
+body
+{
+background-color:#00ffff;
+}
+</style>
+</head>
+
+<body>
+
+<h1><center>American Flag</center></h1>
+<center>
+<canvas id="us_flag" width="1000" height="650" style="border:1px solid #0000ff;">
+
+</canvas>
+</center>
+
+<script>
+//creates red stripes
+var canvas_flag_stripe=document.getElementById('us_flag');
+var context_flag_stripe=canvas_flag_stripe.getContext('2d');
+var height=canvas_flag_stripe.height;
+for(var i=0; i< height; i+=100)
+{
+context_flag_stripe.beginPath();
+context_flag_stripe.moveTo(0, i);
+context_flag_stripe.lineTo(canvas_flag_stripe.width,i);
+context_flag_stripe.lineTo(canvas_flag_stripe.width, i+50);
+context_flag_stripe.lineTo(0,i+50);
+context_flag_stripe.fillStyle='red';
+context_flag_stripe.fill();
+
+
+
+context_flag_stripe.closePath();
+}
+ //white stripes
+for(var i=50; i< height; i+=100)
+{
+context_flag_stripe.beginPath();
+context_flag_stripe.moveTo(0, i);
+context_flag_stripe.lineTo(canvas_flag_stripe.width,i);
+context_flag_stripe.lineTo(canvas_flag_stripe.width, i+50);
+context_flag_stripe.lineTo(0,i+50);
+context_flag_stripe.fillStyle='white';
+context_flag_stripe.fill();
+
+
+
+context_flag_stripe.closePath();
+}
+
+
+
+//creates blue square
+var blues_square_canvas_flag=document.getElementById('us_flag');
+var context_flag_square=blues_square_canvas_flag.getContext('2d');
+
+context_flag_square.beginPath();
+context_flag_square.moveTo(0,0);
+context_flag_square.lineTo(blues_square_canvas_flag.width/2,0);
+context_flag_square.lineTo(blues_square_canvas_flag.width/2, blues_square_canvas_flag.height/2+25);
+context_flag_square.lineTo(0, blues_square_canvas_flag.height/2+25);
+context_flag_square.fillStyle='blue';
+context_flag_square.fill();
+context_flag_square.closePath();
+
+//creates white stars
+var canvas_star=document.getElementById('us_flag');
+var context_star=canvas_star.getContext('2d');
+
+var star_height=canvas_star.height/2;
+var star_width=canvas_star.width/2;
+
+for(var i=30; i< star_height; i+=70)
+{
+  for(var j=80; j < star_width; j+=80)
+  {
+    context_star.beginPath();
+    context_star.moveTo(j,i);
+    context_star.lineTo(j-22,i);
+    context_star.lineTo(j-27,i-15);
+    context_star.lineTo(j-35,i);
+    context_star.lineTo(j-50,i);
+    context_star.lineTo(j-27-7,i+5);
+    context_star.lineTo(j-27-9,i+25);
+    context_star.lineTo(j-27,i+15);
+    context_star.lineTo(j-27+9,i+25);
+    context_star.lineTo(j-27+7,i+5);
+    context_star.fillStyle='white';
+    context_star.fill();
+    context_star.closePath();
+
+
+
+
+  }
+
+}
+
+//for(var i=60; i< star_height; i+=81)
+//{
+  //for(var j=80; j < star_width; j+=90)
+  //{
+
+   //context_star.beginPath();
+    //context_star.moveTo(j,i);
+    //context_star.lineTo(j-8,i+5);
+    //context_star.lineTo(j-22,i+5);
+    //context_star.lineTo(j-10,i+7);
+    //context_star.lineTo(j-13,i+25);
+    //context_star.lineTo(j,i+15);
+    //context_star.lineTo(j+13,i+25);
+    //context_star.lineTo(j+10,i+7);
+    //context_star.lineTo(j+30,i+5);
+    //context_star.lineTo(j+8,i+5);
+    //context_star.fillStyle='white';
+    //context_star.fill();
+    //context_star.closePath();
+
+
+  //}
+
+//}
+</script>
+</body>
+
+</html>
