@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+
+</title>
+
+</head>
+
+<body>
+<h1><center>Brazil Flag</center></h1>
+<center>
+<canvas id="brazil_flag" width="1000" height="640">
+
+</canvas>
+</center>
+
+<script>
+
+var canvas_flag_circle=document.getElementById('brazil_flag');
+var context_flag=canvas_flag_circle.getContext('2d');
+var center_X=canvas_flag_circle.width/2;
+var center_Y=canvas_flag_circle.height/2;
+var radius=200;
+var number_of_sides=4;
+//context_flag.beginPath();
+//context_flag.arc(center_X, center_Y, radius,0,2*Math.PI,false);
+//context_flag.fillStyle='blue';
+//context_flag.fill();
+
+//context_flag.closePath();
+
+
+//creating green square
+var canvas_flag_square=document.getElementById('brazil_flag'); 
+var context_flag_square=canvas_flag_square.getContext('2d');
+
+context_flag_square.beginPath();
+context_flag_square.moveTo(center_X+450, center_Y+450);
+
+for(var i=1; i<=number_of_sides; i+=1)
+{
+context_flag_square.lineTo(center_X+450 *Math.cos(Math.PI*(i/2)+Math.PI/number_of_sides), center_Y+450*Math.sin(Math.PI*(i/2)+Math.PI/number_of_sides));
+}
+
+context_flag_square.fillStyle='green';
+context_flag_square.fill();
+
+context_flag_square.closePath();
+
+
+//The yellow diamond
+var canvas_flag_diamond=document.getElementById('brazil_flag');
+var context_flag_diamond=canvas_flag_diamond.getContext('2d');
+context_flag_diamond.beginPath();
+
+context_flag_diamond.moveTo(center_X+300, center_Y);
+
+for(var i=1; i<=number_of_sides; i+=1)
+{
+context_flag_diamond.lineTo(center_X+300 *Math.cos(i*2*Math.PI/number_of_sides), center_Y+300*Math.sin(i*2*Math.PI/number_of_sides));
+}
+
+context_flag_diamond.fillStyle='yellow';
+context_flag_diamond.fill();
+
+context_flag_diamond.closePath();
+
+//creating blue circle
+context_flag.beginPath();
+context_flag.arc(center_X, center_Y, radius,0,2*Math.PI,false); //creating circle for brazil flag
+context_flag.fillStyle='blue';
+context_flag.fill();
+
+context_flag.closePath();
+</script>
+</body>
+
+</html>
